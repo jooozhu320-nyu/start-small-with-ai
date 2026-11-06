@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Start Small with AI | AI workflows for small business</title>
+<meta name="description" content="I help small business owners turn one repeating task into a simple AI workflow. Invoices, quotes, reports, costs. You approve every step that matters.">
+<style>
+:root{--ink:#0a0a0a;--paper:#ffffff;--soft:#f5f5f4;--line:#e5e5e3;--mute:#6b6b68;--dline:#2a2a28;--dmute:#a3a3a0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Inter","Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+/* nav */
+.nav{position:sticky;top:0;z-index:10;background:rgba(10,10,10,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--dline)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{color:#fff;font-weight:700;letter-spacing:-.01em;font-size:17px}
+.brand span{color:var(--dmute);font-weight:500}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:600;font-size:15px;padding:13px 22px;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:transform .15s,background .15s,color .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-light{background:#fff;color:var(--ink)}
+.btn-light:hover{background:#e8e8e6}
+.btn-ghost{background:transparent;color:#fff;border-color:#4a4a47}
+.btn-ghost:hover{border-color:#fff}
+.btn-sm{padding:9px 18px;font-size:14px}
+/* hero */
+.hero{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at 70% 0%,#000 0%,transparent 70%);mask-image:radial-gradient(ellipse at 70% 0%,#000 0%,transparent 70%)}
+.hero .wrap{position:relative;padding-top:104px;padding-bottom:112px}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--dmute);border:1px solid var(--dline);padding:6px 14px;border-radius:999px;margin-bottom:28px}
+h1{font-size:clamp(40px,7vw,76px);line-height:1.04;letter-spacing:-.035em;font-weight:700;max-width:15ch}
+h1 em{font-style:normal;color:var(--dmute)}
+.lede{margin-top:28px;font-size:clamp(17px,2vw,21px);color:#d4d4d1;max-width:46ch;line-height:1.55}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+.fine{margin-top:36px;font-size:13px;color:var(--dmute)}
+/* sections */
+section{padding:96px 0}
+.tag{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:16px}
+h2{font-size:clamp(30px,4.4vw,48px);line-height:1.1;letter-spacing:-.03em;font-weight:700;max-width:20ch}
+.sub{margin-top:18px;color:var(--mute);font-size:18px;max-width:52ch}
+.grid{display:grid;gap:20px;margin-top:56px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{border:1px solid var(--line);border-radius:16px;padding:28px;background:#fff}
+.card p{color:var(--mute);font-size:16px}
+.card h3{font-size:19px;letter-spacing:-.01em;margin-bottom:10px;line-height:1.3}
+.num{font-size:13px;font-weight:700;color:var(--mute);letter-spacing:.08em;margin-bottom:18px;display:block}
+.problem{background:var(--soft)}
+.problem .card{background:#fff}
+.problem .card p{color:var(--ink);font-size:17px;line-height:1.5}
+.dark{background:var(--ink);color:#fff}
+.dark .tag,.dark .sub{color:var(--dmute)}
+.dark .card{background:#141413;border-color:var(--dline)}
+.dark .card p{color:var(--dmute)}
+.dark .num{color:var(--dmute)}
+.steps .card{background:#fff}
+.services{background:var(--soft)}
+.services .card{background:#fff}
+.list{margin-top:14px;list-style:none;color:var(--mute);font-size:15px}
+.list li{padding:8px 0;border-top:1px solid var(--line)}
+/* cta */
+.cta{background:var(--ink);color:#fff;text-align:center;padding:112px 0}
+.cta h2{margin:0 auto;max-width:18ch}
+.cta .sub{margin:20px auto 0;color:#d4d4d1}
+.cta .btn{margin-top:40px;padding:16px 30px;font-size:16px}
+footer{background:#000;color:var(--dmute);padding:40px 0;font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+@media(max-width:900px){.g4{grid-template-columns:1fr 1fr}.g3,.g2{grid-template-columns:1fr}}
+@media(max-width:600px){.g4{grid-template-columns:1fr}section{padding:72px 0}.hero .wrap{padding-top:72px;padding-bottom:80px}.cta{padding:80px 0}.btn{width:100%}.nav .btn{width:auto}.cta-row{flex-direction:column}}
+
+/* motion */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes floatA{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(40px,30px,0) scale(1.12)}}
+@keyframes floatB{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-50px,-20px,0) scale(1.08)}}
+@keyframes gridDrift{from{background-position:0 0,0 0}to{background-position:56px 56px,56px 56px}}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.hero .orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
+.hero .o1{width:520px;height:520px;right:-120px;top:-160px;background:rgba(255,255,255,.14);animation:floatA 14s ease-in-out infinite}
+.hero .o2{width:420px;height:420px;left:20%;bottom:-220px;background:rgba(160,160,160,.16);animation:floatB 18s ease-in-out infinite}
+.hero::before{animation:gridDrift 24s linear infinite}
+.hero .eyebrow,.hero h1,.hero .lede,.hero .cta-row,.hero .fine{opacity:0;animation:fadeUp .9s cubic-bezier(.2,.7,.2,1) forwards}
+.hero .eyebrow{animation-delay:.05s}.hero h1{animation-delay:.18s}.hero .lede{animation-delay:.34s}.hero .cta-row{animation-delay:.48s}.hero .fine{animation-delay:.62s}
+.ticker{background:#fff;border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap}
+.ticker .track{display:inline-flex;animation:ticker 32s linear infinite;padding:18px 0}
+.ticker span{font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);padding:0 28px;display:inline-flex;align-items:center;gap:56px}
+.ticker span::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--ink);display:inline-block}
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js .reveal.in{opacity:1;transform:none}
+.card{position:relative;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+.card>*{position:relative}
+.card::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(320px circle at var(--x,50%) var(--y,50%),rgba(0,0,0,.07),transparent 60%);opacity:0;transition:opacity .3s}
+.dark .card::before{background:radial-gradient(320px circle at var(--x,50%) var(--y,50%),rgba(255,255,255,.1),transparent 60%)}
+.card:hover{transform:translateY(-4px);border-color:#bdbdb9;box-shadow:0 14px 34px rgba(0,0,0,.08)}
+.dark .card:hover{border-color:#4a4a47;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+.card:hover::before{opacity:1}
+.btn-light{box-shadow:0 0 0 0 rgba(255,255,255,.4)}
+.cta .btn-light{animation:pulse 2.6s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.35)}70%,100%{box-shadow:0 0 0 18px rgba(255,255,255,0)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.hero .eyebrow,.hero h1,.hero .lede,.hero .cta-row,.hero .fine{opacity:1}.js .reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Start Small <span>with AI</span></a>
+    <a class="btn btn-light btn-sm" href="#book">Book a call</a>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="hero">
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <div class="wrap">
+    <span class="eyebrow">AI workflow consulting for small business</span>
+    <h1>Put AI to work on the <em>busywork.</em></h1>
+    <p class="lede">I help small business owners turn one repeating task into a simple AI workflow. Invoices, quotes, reports, costs. You approve every step that matters.</p>
+    <div class="cta-row">
+      <a class="btn btn-light" href="#book">Book a free 15-minute call</a>
+      <a class="btn btn-ghost" href="#how">See how it works</a>
+    </div>
+    <p class="fine">Pilot engagements now open. Independent practice, not affiliated with Anthropic.</p>
+  </div>
+</div>
+
+<div class="ticker" aria-hidden="true"><div class="track"><span>Invoices</span><span>Quotes</span><span>Weekly reports</span><span>Customer follow-ups</span><span>Cost analysis</span><span>Reminders</span><span>Margins</span><span>Invoices</span><span>Quotes</span><span>Weekly reports</span><span>Customer follow-ups</span><span>Cost analysis</span><span>Reminders</span><span>Margins</span></div></div>
+
+<section class="problem">
+  <div class="wrap">
+    <p class="tag">Sound familiar?</p>
+    <h2>The work that follows you home.</h2>
+    <div class="grid g4">
+      <div class="card"><span class="num">01</span><p>Bills get paid late because nobody owns the reminder.</p></div>
+      <div class="card"><span class="num">02</span><p>Customer follow-ups slip through the cracks when the week gets busy.</p></div>
+      <div class="card"><span class="num">03</span><p>Quotes and weekly reports eat your evenings.</p></div>
+      <div class="card"><span class="num">04</span><p>You are not sure which products or customers actually make you money.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="steps">
+  <div class="wrap">
+    <p class="tag">How it works</p>
+    <h2>One task. One workflow. You stay in charge.</h2>
+    <p class="sub">No big project, no new software to learn. We start with the one job you would be glad to never do by hand again.</p>
+    <div class="grid g3">
+      <div class="card"><span class="num">STEP 1</span><h3>Pick one task</h3><p>We choose a weekly job that is repetitive, clear, and low-risk to start with.</p></div>
+      <div class="card"><span class="num">STEP 2</span><h3>Split the work</h3><p>We write down every step. Some go to AI. Some stay with you. We draw the line on purpose.</p></div>
+      <div class="card"><span class="num">STEP 3</span><h3>Test, then trust</h3><p>We run it on past work where you already know the right answer, and only then use it on a live week.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <p class="tag">Why it works</p>
+    <h2>Three principles behind every workflow.</h2>
+    <div class="grid g3">
+      <div class="card"><span class="num">01</span><h3>Start with one task</h3><p>Small, specific, and useful within days. Add the next one only when the first one earns your trust.</p></div>
+      <div class="card"><span class="num">02</span><h3>You approve what matters</h3><p>AI drafts and prepares. Nothing is sent, paid, or deleted without your yes.</p></div>
+      <div class="card"><span class="num">03</span><h3>Numbers you can act on</h3><p>Plain-English summaries of cost and margin, so you can make the call with confidence.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="wrap">
+    <p class="tag">What we can build</p>
+    <h2>Practical help for the way you already work.</h2>
+    <div class="grid g2">
+      <div class="card"><h3>AI workflow setup</h3><p>Turn a repeating task into a reusable workflow.</p>
+        <ul class="list"><li>Email and follow-up drafts</li><li>Weekly reports and summaries</li><li>Reminders and checklists</li></ul></div>
+      <div class="card"><h3>Cost and margin analysis</h3><p>See where your money goes and what earns it back.</p>
+        <ul class="list"><li>Cost and pricing review</li><li>Margin by product or customer</li><li>Simple what-if scenarios</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="cta">
+  <div class="wrap">
+    <p class="tag" style="color:var(--dmute)">Let's talk</p>
+    <h2>What is the one task you would hand off first?</h2>
+    <p class="sub">Book a free 15-minute call. Tell me about it, and I will tell you honestly whether AI can help and what a first workflow would look like.</p>
+    
+    <a class="btn btn-light" href="mailto:jooozhu320@gmail.com?subject=15-minute%20call&body=Hi%2C%20the%20one%20task%20I%27d%20hand%20off%20first%20is%3A%20">Book a free 15-minute call</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Start Small with AI</span>
+    <span>Independent practice. Not affiliated with, endorsed by, or sponsored by Anthropic or any AI company.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var sel='.card, section h2, section .sub, section .tag, .cta .btn';
+  var els=[].slice.call(document.querySelectorAll(sel));
+  els.forEach(function(el){
+    el.classList.add('reveal');
+    var sibs=el.parentElement?[].slice.call(el.parentElement.children).filter(function(c){return c.classList.contains('card')}):[];
+    var i=sibs.indexOf(el); if(i>0) el.style.setProperty('--d',(i*0.09)+'s');
+  });
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(el){io.observe(el)});
+  } else { els.forEach(function(el){el.classList.add('in')}); }
+  document.querySelectorAll('.card').forEach(function(c){
+    c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--x',(e.clientX-r.left)+'px');c.style.setProperty('--y',(e.clientY-r.top)+'px')});
+  });
+})();
+</script>
+</body>
+</html>
